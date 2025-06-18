@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Justice for Our Heroes - July 25th Memorial</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --kenya-black: #000000;
+            --kenya-red: #BB0000;
+            --kenya-green: #006600;
+            --kenya-white: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Kanit', sans-serif;
+            color: var(--kenya-white);
+            min-height: 100vh;
+            overflow-x: hidden;
+            background: var(--kenya-black);
+        }
+
+        #animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: radial-gradient(ellipse at center, 
+                            rgba(187, 0, 0, 0.1) 0%, 
+                            rgba(0, 0, 0, 1) 70%);
+        }
+
+        .hero-title {
+            text-shadow: 0 0 20px rgba(187, 0, 0, 0.7);
+        }
+
+        .memorial-card {
+            background: rgba(0, 0, 0, 0.7);
+            border-left: 4px solid var(--kenya-red);
+            border-right: 4px solid var(--kenya-green);
+            transition: all 0.4s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        .memorial-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 10px 30px rgba(187, 0, 0, 0.3);
+            border-left: 4px solid var(--kenya-green);
+            border-right: 4px solid var(--kenya-red);
+        }
+
+        .date-badge {
+            background: linear-gradient(135deg, 
+                            var(--kenya-red) 0%, 
+                            var(--kenya-green) 100%);
+            clip-path: polygon(0 0, 100% 0, 90% 50%, 100% 100%, 0 100%, 10% 50%);
+        }
+
+        .kenya-flag-line {
+            height: 6px;
+            background: linear-gradient(90deg, 
+                            var(--kenya-black) 25%, 
+                            var(--kenya-white) 25%, 
+                            var(--kenya-white) 30%, 
+                            var(--kenya-red) 30%, 
+                            var(--kenya-red) 70%, 
+                            var(--kenya-green) 70%, 
+                            var(--kenya-green) 75%, 
+                            var(--kenya-black) 75%);
+        }
+
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+            filter: drop-shadow(0 0 5px currentColor);
+            animation: float var(--duration) linear infinite;
+            animation-delay: var(--delay);
+        }
+
+        @keyframes float {
+            0% {
+                transform: translate3d(var(--start-x), var(--start-y), 0) scale(0.5);
+                opacity: 0;
+            }
+            10% {
+                opacity: var(--opacity);
+            }
+            90% {
+                opacity: var(--opacity);
+            }
+            100% {
+                transform: translate3d(var(--end-x), var(--end-y), 0) scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        .pulse-btn {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(187, 0, 0, 0.5); }
+            70% { box-shadow: 0 0 0 15px rgba(187, 0, 0, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(187, 0, 0, 0); }
+        }
+
+        .hashtag {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hashtag::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--kenya-red);
+            transition: width 0.3s ease;
+        }
+
+        .hashtag:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div id="animated-bg"></div>
+
+    <!-- Header Section -->
+    <header class="relative py-16">
+        <div class="kenya-flag-line"></div>
+        <div class="container mx-auto px-4 text-center mt-12">
+            <div class="date-badge inline-block px-8 py-2 mb-6">
+                <h3 class="text-xl font-bold text-white">JULY MEMORIAL • 25TH</h3>
+            </div>
+            <h1 class="hero-title text-5xl md:text-7xl lg:text-8xl font-bold mb-6">
+                <span class="text-white">REMEMBERING</span><br>
+                <span class="text-red-600">OUR HEROES</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-green-500 font-light">
+                Honoring those who stood for justice • #RejectFinanceBill2024
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="relative container mx-auto px-4 py-12">
+        <!-- Memorial Counter -->
+        <div class="text-center mb-16">
+            <div class="inline-block bg-black bg-opacity-70 border-2 border-red-600 rounded-xl px-8 py-6">
+                <p class="text-sm uppercase tracking-widest text-green-500 mb-2">Heroes Remembered</p>
+                <h3 class="text-6xl font-bold text-red-600">60+</h3>
+                <p class="text-md mt-2 text-gray-300">Lives Lost for Justice</p>
+            </div>
+        </div>
+
+     <!-- Names Section -->
+<section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-20">
+    <!-- Individual Name Cards -->
+    <div class="memorial-card rounded-lg p-6 text-center">
+        <h2 class="text-2xl font-bold text-white">Denzel Omondi</h2>
+    </div>
+    <div class="memorial-card rounded-lg p-6 text-center">
+        <h2 class="text-2xl font-bold text-white">Rex Maasai</h2>
+    </div>
+    <div class="memorial-card rounded-lg p-6 text-center">
+        <h2 class="text-2xl font-bold text-white">Beasley Kogi</h2>
+    </div>
+    <div class="memorial-card rounded-lg p-6 text-center">
+        <h2 class="text-2xl font-bold text-white">David Chege</h2>
+    </div>
+    <div class="memorial-card rounded-lg p-6 text-center">
+        <h2 class="text-2xl font-bold text-white">Austin Makoha</h2>
+    </div>
+    <div class="memorial-card rounded-lg p-6 text-center">
+        <h2 class="text-2xl font-bold text-white">Mike Kihunga</h2>
+    </div>
+    <div class="memorial-card rounded-lg p-6 text-center">
+        <h2 class="text-2xl font-bold text-white">Kevin Madanga</h2>
+    </div>
+    <div class="memorial-card rounded-lg p-6 text-center">
+        <h2 class="text-2xl font-bold text-white">Kennedy Onyango (12)</h2>
+    </div>
+    <div class="memorial-card rounded-lg p-6 text-center">
+        <h2 class="text-2xl font-bold text-white">Anthony Kimeu</h2>
+    </div>
+    <div class="memorial-card rounded-lg p-6 text-center">
+        <h2 class="text-2xl font-bold text-white">Matthew Njoroge</h2>
+    </div>
+    <div class="memorial-card rounded-lg p-6 text-center">
+        <h2 class="text-2xl font-bold text-white">Kevin Mwawasi</h2>
+    </div>
+    <div class="memorial-card rounded-lg p-6 text-center">
+        <h2 class="text-2xl font-bold text-white">Erickson Kyalo</h2>
+    </div>
+    <div class="memorial-card rounded-lg p-6 text-center">
+        <h2 class="text-2xl font-bold text-white">Ibrahim Kamau</h2>
+    </div>
+    <div class="memorial-card rounded-lg p-6 text-center">
+        <h2 class="text-2xl font-bold text-white">Eric Kanyoni</h2>
+    </div>
+    <div class="memorial-card rounded-lg p-6 text-center">
+        <h2 class="text-2xl font-bold text-white">Evans Kiratu</h2>
+    </div>
+    <div class="memorial-card rounded-lg p-6 text-center">
+        <h2 class="text-2xl font-bold text-white">Credo Oyaro</h2>
+    </div>
+    <div class="memorial-card rounded-lg p-6 text-center">
+        <h2 class="text-2xl font-bold text-white">Caroline Shiramba</h2>
+    </div>
+    <div class="memorial-card rounded-lg p-6 text-center">
+        <h2 class="text-2xl font-bold text-white">Denis Otieno</h2>
+    </div>
+    <div class="memorial-card rounded-lg p-6 text-center">
+        <h2 class="text-2xl font-bold text-white">Emmanuel Tata</h2>
+    </div>
+    <div class="memorial-card rounded-lg p-6 text-center">
+        <h2 class="text-2xl font-bold text-white">Joash Ombati</h2>
+    </div>
+    <div class="memorial-card rounded-lg p-6 text-center">
+        <h2 class="text-2xl font-bold text-white">Kevin Ochieng</h2>
+    </div>
+    <div class="memorial-card rounded-lg p-6 text-center">
+        <h2 class="text-2xl font-bold text-white">Anthony Mwangi</h2>
+    </div>
+    <div class="memorial-card rounded-lg p-6 text-center">
+        <h2 class="text-2xl font-bold text-white">Kennedy Odhiambo</h2>
+    </div>
+    <div class="memorial-card rounded-lg p-6 text-center">
+        <h2 class="text-2xl font-bold text-white">Wilson Sitati</h2>
+    </div>
+    <div class="memorial-card rounded-lg p-6 text-center">
+        <h2 class="text-2xl font-bold text-white">Kennedy Njeru</h2>
+    </div>
+    <div class="memorial-card rounded-lg p-6 text-center">
+        <h2 class="text-2xl font-bold text-white">Duncan Onsongo</h2>
+    </div>
+    <div class="memorial-card rounded-lg p-6 text-center">
+        <h2 class="text-2xl font-bold text-white">Chris Gitonga</h2>
+    </div>
+    <div class="memorial-card rounded-lg p-6 text-center">
+        <h2 class="text-2xl font-bold text-white">Carlton Mwangi</h2>
+    </div>
+    <div class="memorial-card rounded-lg p-6 text-center">
+        <h2 class="text-2xl font-bold text-white">Ernest Kanyi</h2>
+    </div>
+    <div class="memorial-card rounded-lg p-6 text-center">
+        <h2 class="text-2xl font-bold text-white">Brian Kimathi</h2>
+    </div>
+    <div class="memorial-card rounded-lg p-6 text-center">
+        <h2 class="text-2xl font-bold text-white">Bernard Kiplagat</h2>
+    </div>
+    <div class="memorial-card rounded-lg p-6 text-center">
+        <h2 class="text-2xl font-bold text-white">Francis Kipkorir</h2>
+    </div>
+    <div class="memorial-card rounded-lg p-6 text-center">
+        <h2 class="text-2xl font-bold text-white">Cholding Malang</h2>
+    </div>
+    <div class="memorial-card rounded-lg p-6 text-center">
+        <h2 class="text-2xl font-bold text-white">David Shaban</h2>
+    </div>
+    <div class="memorial-card rounded-lg p-6 text-center">
+        <h2 class="text-2xl font-bold text-white">Clinton Mwavali</h2>
+    </div>
+    <div class="memorial-card rounded-lg p-6 text-center">
+        <h2 class="text-2xl font-bold text-white">Brian Ezra</h2>
+    </div>
+    <div class="memorial-card rounded-lg p-6 text-center">
+        <h2 class="text-2xl font-bold text-white">Bernard Mungai</h2>
+    </div>
+    <div class="memorial-card rounded-lg p-6 text-center">
+        <h2 class="text-2xl font-bold text-white">Denis Juma</h2>
+    </div>
+    <div class="memorial-card rounded-lg p-6 text-center">
+        <h2 class="text-2xl font-bold text-white">Braxton Omae</h2>
+    </div>
+    <div class="memorial-card rounded-lg p-6 text-center">
+        <h2 class="text-2xl font-bold text-white">Benscot Onyango</h2>
+    </div>
+    <div class="memorial-card rounded-lg p-6 text-center">
+        <h2 class="text-2xl font-bold text-white">John Boidras</h2>
+    </div>
+    <div class="memorial-card rounded-lg p-6 text-center">
+        <h2 class="text-2xl font-bold text-white">Phantaleo Nakara</h2>
+    </div>
+    <div class="memorial-card rounded-lg p-6 text-center">
+        <h2 class="text-2xl font-bold text-white">Timothy Muchui</h2>
+    </div>
+    <div class="memorial-card rounded-lg p-6 text-center">
+        <h2 class="text-2xl font-bold text-white">Wycliffe Kane</h2>
+    </div>
+    <div class="memorial-card rounded-lg p-6 text-center">
+        <h2 class="text-2xl font-bold text-white">Daniel Kakai</h2>
+    </div>
+    <div class="memorial-card rounded-lg p-6 text-center">
+        <h2 class="text-2xl font-bold text-white">Timothy Miheso</h2>
+    </div>
+    <div class="memorial-card rounded-lg p-6 text-center">
+        <h2 class="text-2xl font-bold text-white">Charles Owino</h2>
+    </div>
+    <div class="memorial-card rounded-lg p-6 text-center">
+        <h2 class="text-2xl font-bold text-white">Alex Muteti</h2>
+    </div>
+    <div class="memorial-card rounded-lg p-6 text-center">
+        <h2 class="text-2xl font-bold text-white">Denis Libanga</h2>
+    </div>
+    <div class="memorial-card rounded-lg p-6 text-center">
+        <h2 class="text-2xl font-bold text-white">Shaquille Obienge</h2>
+    </div>
+    <div class="memorial-card rounded-lg p-6 text-center">
+        <h2 class="text-2xl font-bold text-white">Abdikadir Saadia</h2>
+    </div>
+    <div class="memorial-card rounded-lg p-6 text-center">
+        <h2 class="text-2xl font-bold text-white">John Musili</h2>
+    </div>
+    <div class="memorial-card rounded-lg p-6 text-center">
+        <h2 class="text-2xl font-bold text-white">Reagan Ouko</h2>
+    </div>
+    <div class="memorial-card rounded-lg p-6 text-center">
+        <h2 class="text-2xl font-bold text-white">Ian Ochieng</h2>
+    </div>
+    <div class="memorial-card rounded-lg p-6 text-center">
+        <h2 class="text-2xl font-bold text-white">Tillen Odhiambo</h2>
+    </div>
+    <div class="memorial-card rounded-lg p-6 text-center">
+        <h2 class="text-2xl font-bold text-white">Isaac Njuguna</h2>
+    </div>
+    <div class="memorial-card rounded-lg p-6 text-center">
+        <h2 class="text-2xl font-bold text-white">Samuel Mutisya</h2>
+    </div>
+</section>
+
+        <!-- Monthly Memorial Section -->
+        <section class="text-center my-20">
+            <div class="inline-block border-2 border-green-600 rounded-full px-8 py-2 mb-8">
+                <h3 class="text-xl font-bold text-white">JULY REMEMBRANCE</h3>
+            </div>
+            <h2 class="text-4xl md:text-5xl font-bold text-red-600 mb-6">25TH OF JULY FOREVER</h2>
+            <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                We honor our fallen heroes on the 25th of July, a day to remember their sacrifice 
+                and renew our commitment to justice.
+            </p>
+            <div class="mt-12 flex justify-center">
+                <div class="w-48 h-1 bg-gradient-to-r from-red-600 via-white to-green-600"></div>
+            </div>
+        </section>
+
+        <!-- Hashtags Section -->
+        <div class="text-center my-16">
+            <div class="inline-flex flex-wrap justify-center gap-6">
+                <span class="hashtag text-xl font-bold text-white">#StolenSteps</span>
+                <span class="hashtag text-xl font-bold text-white">#RejectFinanceBill2024</span>
+                <span class="hashtag text-xl font-bold text-white">#25thMemorial</span>
+            </div>
+        </div>
+
+        <!-- Call to Action -->
+        <section class="text-center mt-12 max-w-3xl mx-auto">
+            <h3 class="text-3xl md:text-4xl font-bold text-green-500 mb-6">
+                Their Fight Continues Through Us
+            </h3>
+            <div class="flex flex-col sm:flex-row justify-center gap-6 mt-8">
+                <a href="#" class="pulse-btn inline-block bg-red-600 text-white px-10 py-4 rounded-lg hover:bg-red-700 transition-all duration-300 font-bold text-lg">
+                    Join the Movement
+                </a>
+                <a href="#" class="inline-block bg-transparent border-2 border-green-600 text-white px-10 py-4 rounded-lg hover:bg-green-600 transition-all duration-300 font-bold text-lg">
+                    Share Their Stories
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="relative bg-black bg-opacity-80 text-center py-12 mt-20 border-t border-gray-800">
+        <div class="container mx-auto px-4">
+            <div class="kenya-flag-line w-1/2 mx-auto"></div>
+            <p class="text-gray-400 mt-8">
+                "The tree of liberty must be refreshed from time to time with the blood of patriots and tyrants."
+            </p>
+            <p class="text-sm text-gray-500 mt-4">
+                Created with Respect and Remembrance • #JusticeForOurHeroes
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Create animated background particles
+        document.addEventListener('DOMContentLoaded', function() {
+            const bg = document.getElementById('animated-bg');
+            const particleCount = 120;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+
+                // Random size between 1px and 4px
+                const size = Math.random() * 3 + 1;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+
+                // Random position
+                const startX = Math.random() * 100;
+                const startY = Math.random() * 100;
+
+                // Random animation properties
+                const duration = Math.random() * 25 + 15;
+                const delay = Math.random() * 20;
+                const endX = startX + (Math.random() * 40 - 20);
+                const endY = startY - (Math.random() * 60 + 40);
+                const opacity = Math.random() * 0.7 + 0.3;
+
+                // Random color (red or green)
+                const isRed = Math.random() > 0.5;
+                const color = isRed ? 'rgba(187, 0, 0, 0.8)' : 'rgba(0, 102, 0, 0.8)';
+                particle.style.backgroundColor = color;
+
+                particle.style.setProperty('--start-x', `${startX}vw`);
+                particle.style.setProperty('--start-y', `${startY}vh`);
+                particle.style.setProperty('--end-x', `${endX}vw`);
+                particle.style.setProperty('--end-y', `${endY}vh`);
+                particle.style.setProperty('--opacity', opacity);
+                particle.style.setProperty('--duration', `${duration}s`);
+                particle.style.setProperty('--delay', `${delay}s`);
+
+                bg.appendChild(particle);
+            }
+        });
+    </script>
+</body>
+</html>
